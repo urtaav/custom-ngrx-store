@@ -1,0 +1,29 @@
+<div class="character-add-container">
+  <form [formGroup]="characterForm()" (ngSubmit)="onSubmit()" class="character-form">
+    <app-custom-input
+      label="Name:"
+      [control]="$any(characterForm().get('name'))"
+      placeHolder="Enter Character Name"
+      type="text"
+      errorMessage="Name is REQUIRED"
+      aria-label="Character Name"
+    ></app-custom-input>
+
+    <app-custom-input
+      label="Image:"
+      [control]="$any(characterForm().get('image'))"
+      placeHolder="Enter Character Image URL"
+      type="text"
+      errorMessage="Image URL is REQUIRED"
+      aria-label="Character Image URL"
+    ></app-custom-input>
+
+    <button 
+      type="submit" 
+      [disabled]="characterForm().invalid" 
+      class="submit-button"
+    >
+      {{ characterToEdit().name ? "Edit Character" : "Add Character" }}
+    </button>
+  </form>
+</div>

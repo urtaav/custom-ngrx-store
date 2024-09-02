@@ -1,0 +1,62 @@
+/* Estilo para la tarjeta de personaje */
+.character-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  margin-bottom: 12px;
+}
+
+.card-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.character-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+/* Estilo para los botones */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-remove, .btn-edit {
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-remove {
+  background-color: #e53935;
+  color: white;
+}
+
+.btn-remove:hover {
+  background-color: #c62828;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-edit {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #1976d2;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}

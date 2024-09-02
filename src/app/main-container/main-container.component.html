@@ -1,0 +1,30 @@
+
+@if (store.isLoading()) {
+  <div class="add-character-button">
+    <a routerLink="/add-edit-character" class="btn-add-character">
+      <span class="icon">+</span> Add Character
+    </a>
+  </div>
+  
+  <div class="character-grid">
+    @defer (when store.characters().length) {
+      @for (character of store.characters(); track character.id) {
+        @defer (on viewport) {
+          <app-character-card [character]="character"></app-character-card>
+        } @placeholder {
+          <div class="placeholder-card">
+            <div class="placeholder-content">Loading...</div>
+          </div>
+        }
+      }
+    } @placeholder {
+      <div class="placeholder-card">
+        <div class="placeholder-content">Loading...</div>
+      </div>
+    }
+  </div>
+}@else {
+  <div class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+}
